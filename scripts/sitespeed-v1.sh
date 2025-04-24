@@ -15,6 +15,6 @@ while IFS= read -r url; do
   if [[ -n "$url" ]]; then
     echo "Running sitespeed.io for $url"
     # Execute the Docker command with the specified timezone and mount the current directory
-    docker run -e TZ=$timezone --rm -v "$(pwd)":/sitespeed.io sitespeedio/sitespeed.io "$url"
+    docker run -e TZ=$timezone --rm -v "$(pwd)":/sitespeed.io sitespeedio/sitespeed.io:37.4.2 "$url"
   fi
 done < list.txt
